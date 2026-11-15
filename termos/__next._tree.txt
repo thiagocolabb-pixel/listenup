@@ -1,5 +1,5 @@
-:HL["/listenup/_next/static/chunks/0xzkvc9q9ua78.css","style"]
+:HL["/listenup/_next/static/chunks/0syfbzdyx0vvw.css","style"]
 :HL["/listenup/_next/static/media/07c7676b89ed2778-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"termos","h":96,"c":"$Q2"}]]
-0:{"b":"NiOCMrognoxy5kewF33Dn","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"whWr45l9HaFx-4kyZyST_","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
