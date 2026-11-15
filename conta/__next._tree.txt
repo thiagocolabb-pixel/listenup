@@ -1,5 +1,5 @@
-:HL["/listenup/_next/static/chunks/2w1_y8ki4_zc9.css","style"]
+:HL["/listenup/_next/static/chunks/1pi9q7z7uu2gz.css","style"]
 :HL["/listenup/_next/static/media/07c7676b89ed2778-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"conta","h":96,"c":"$Q2"}]]
-0:{"b":"bf1YWQviCGp7NkG3eddeB","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"pmZNAAlRf3TVXA3dzN_0s","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
