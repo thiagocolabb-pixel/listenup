@@ -6,8 +6,8 @@
  * - Dados (Supabase) NÃO passam por aqui: ficam no IndexedDB do app (src/lib/store.ts).
  * __VERSION__ e __PRECACHE__ são preenchidos por scripts/pos-build.mjs a cada build.
  */
-const VERSION = "1556dc7cd75e"
-const PRECACHE = ["404/","__next.__PAGE__.txt","__next._full.txt","__next._tree.txt","_next/static/chunks/00j5qfp3a86gm.js","_next/static/chunks/0cz1d0mv5g_q7.js","_next/static/chunks/0cz8-h2jiccnb.js","_next/static/chunks/0dbpzpy-sev1x.js","_next/static/chunks/0myo9pnsb50q8.css","_next/static/chunks/14h3yco0vxox1.js","_next/static/chunks/198drdir0meyw.js","_next/static/chunks/1d-3ziz_810o8.js","_next/static/chunks/1gsy2oxml9q5h.js","_next/static/chunks/29igpkekl7kvz.js","_next/static/chunks/2gn86lyw--_e_.js","_next/static/chunks/2layhdrz6kwbg.js","_next/static/chunks/310vm2bl3xxpt.js","_next/static/chunks/39_j1bdzreq0m.js","_next/static/chunks/3qfy96eoyh-ek.js","_next/static/chunks/turbopack-3o4-t1p9g0-z6.js","_next/static/lLL-dv9qcQDevVI06clkh/_buildManifest.js","_next/static/lLL-dv9qcQDevVI06clkh/_clientMiddlewareManifest.js","_next/static/lLL-dv9qcQDevVI06clkh/_ssgManifest.js","_next/static/media/07c7676b89ed2778-s.p.2bn3s6zvc0dyp.woff2","_next/static/media/2fb76073e23fd9e4-s.3lvt2whj97whp.woff2","_next/static/media/45462fd7b7c12654-s.0k62hbripvv8p.woff2","_next/static/media/46a9e2f250689b4a-s.0-dom-5bn10r2.woff2","_next/static/media/6131cbbf5549afa2-s.2uwcyprjm3xu3.woff2","_next/static/media/76b70a1dbe058eb5-s.1y4-pdgsjb-pw.woff2","_next/static/media/ba63f6a0e436df8e-s.3-6t-g6q0vh0a.woff2","_not-found/__next._full.txt","_not-found/__next._not-found.__PAGE__.txt","_not-found/__next._not-found/__PAGE__.txt","_not-found/__next._tree.txt","_not-found/","_not-found/index.txt","conta/__next._full.txt","conta/__next._tree.txt","conta/__next.conta.__PAGE__.txt","conta/__next.conta/__PAGE__.txt","conta/","conta/index.txt","estudar/__next._full.txt","estudar/__next._tree.txt","estudar/__next.estudar.__PAGE__.txt","estudar/__next.estudar/__PAGE__.txt","estudar/","estudar/index.txt","icons/apple-touch-icon.png","icons/favicon-32.png","icons/icon-192.png","icons/icon-512.png","icons/maskable-512.png","","index.txt","manifest.webmanifest","novo/__next._full.txt","novo/__next._tree.txt","novo/__next.novo.__PAGE__.txt","novo/__next.novo/__PAGE__.txt","novo/","novo/index.txt","plano/__next._full.txt","plano/__next._tree.txt","plano/__next.plano.__PAGE__.txt","plano/__next.plano/__PAGE__.txt","plano/","plano/index.txt","vocab/__next._full.txt","vocab/__next._tree.txt","vocab/__next.vocab.__PAGE__.txt","vocab/__next.vocab/__PAGE__.txt","vocab/","vocab/index.txt"]
+const VERSION = "737e8075b0b7"
+const PRECACHE = ["404/","__next.__PAGE__.txt","__next._full.txt","__next._tree.txt","_next/static/842dcOekcfzaIjyN1Jwan/_buildManifest.js","_next/static/842dcOekcfzaIjyN1Jwan/_clientMiddlewareManifest.js","_next/static/842dcOekcfzaIjyN1Jwan/_ssgManifest.js","_next/static/chunks/01nh0h03u8tg6.js","_next/static/chunks/07hskajuadi2k.js","_next/static/chunks/0cz1d0mv5g_q7.js","_next/static/chunks/0cz8-h2jiccnb.js","_next/static/chunks/0fvan8dvvtyji.js","_next/static/chunks/0yp_ielfvfr_d.js","_next/static/chunks/11e2hlq8nyc0-.css","_next/static/chunks/16tmw4kor05fl.js","_next/static/chunks/1d-3ziz_810o8.js","_next/static/chunks/1gsy2oxml9q5h.js","_next/static/chunks/250gc_czcsc5b.js","_next/static/chunks/2layhdrz6kwbg.js","_next/static/chunks/310vm2bl3xxpt.js","_next/static/chunks/39_j1bdzreq0m.js","_next/static/chunks/3qfy96eoyh-ek.js","_next/static/chunks/3vm1rd35z5jvp.js","_next/static/chunks/turbopack-3o4-t1p9g0-z6.js","_next/static/media/07c7676b89ed2778-s.p.2bn3s6zvc0dyp.woff2","_next/static/media/2fb76073e23fd9e4-s.3lvt2whj97whp.woff2","_next/static/media/45462fd7b7c12654-s.0k62hbripvv8p.woff2","_next/static/media/46a9e2f250689b4a-s.0-dom-5bn10r2.woff2","_next/static/media/6131cbbf5549afa2-s.2uwcyprjm3xu3.woff2","_next/static/media/76b70a1dbe058eb5-s.1y4-pdgsjb-pw.woff2","_next/static/media/ba63f6a0e436df8e-s.3-6t-g6q0vh0a.woff2","_not-found/__next._full.txt","_not-found/__next._not-found.__PAGE__.txt","_not-found/__next._not-found/__PAGE__.txt","_not-found/__next._tree.txt","_not-found/","_not-found/index.txt","conta/__next._full.txt","conta/__next._tree.txt","conta/__next.conta.__PAGE__.txt","conta/__next.conta/__PAGE__.txt","conta/","conta/index.txt","estudar/__next._full.txt","estudar/__next._tree.txt","estudar/__next.estudar.__PAGE__.txt","estudar/__next.estudar/__PAGE__.txt","estudar/","estudar/index.txt","icons/apple-touch-icon.png","icons/favicon-32.png","icons/icon-192.png","icons/icon-512.png","icons/maskable-512.png","","index.txt","manifest.webmanifest","novo/__next._full.txt","novo/__next._tree.txt","novo/__next.novo.__PAGE__.txt","novo/__next.novo/__PAGE__.txt","novo/","novo/index.txt","plano/__next._full.txt","plano/__next._tree.txt","plano/__next.plano.__PAGE__.txt","plano/__next.plano/__PAGE__.txt","plano/","plano/index.txt","revisar/__next._full.txt","revisar/__next._tree.txt","revisar/__next.revisar.__PAGE__.txt","revisar/__next.revisar/__PAGE__.txt","revisar/","revisar/index.txt","vocab/__next._full.txt","vocab/__next._tree.txt","vocab/__next.vocab.__PAGE__.txt","vocab/__next.vocab/__PAGE__.txt","vocab/","vocab/index.txt"]
 const BASE = new URL(self.registration.scope).pathname // ex.: /listenup/
 const SHELL = `listenup-shell-${VERSION}`
 const RUNTIME = 'listenup-runtime-v1'
@@ -111,4 +111,41 @@ function withTimeout(promise, ms) {
 
 self.addEventListener('message', (event) => {
   if (event.data === 'skipWaiting') self.skipWaiting()
+})
+
+// ---------------------------------------------------------------- lembrete diário (notificação)
+self.addEventListener('push', (event) => {
+  let data = {}
+  try {
+    data = event.data ? event.data.json() : {}
+  } catch {
+    data = { body: event.data ? event.data.text() : '' }
+  }
+  event.waitUntil(
+    self.registration.showNotification(data.title || 'ListenUp', {
+      body: data.body || 'Hora de estudar!',
+      icon: BASE + 'icons/icon-192.png',
+      badge: BASE + 'icons/favicon-32.png',
+      tag: data.tag || 'listenup',
+      renotify: true,
+      data: { url: data.url || BASE },
+    }),
+  )
+})
+
+// Tocar na notificação: abre (ou traz para frente) o app na aula de hoje
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close()
+  const url = (event.notification.data && event.notification.data.url) || BASE
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((wins) => {
+      for (const w of wins) {
+        if (new URL(w.url).pathname.startsWith(BASE) && 'focus' in w) {
+          w.navigate(url)
+          return w.focus()
+        }
+      }
+      return self.clients.openWindow(url)
+    }),
+  )
 })
