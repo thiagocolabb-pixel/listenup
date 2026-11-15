@@ -1,0 +1,24 @@
+1:"$Sreact.fragment"
+2:"/listenup/_next/static/chunks/0mgel2dqlno6t.js"
+3:"/listenup/_next/static/chunks/1digd9mgfmuoi.js"
+4:I[49830,["$2","$3"],"AppShell"]
+5:I[39756,["$2","$3"],"default"]
+6:I[37457,["$2","$3"],"default"]
+7:I[22016,["$2","$3"],""]
+b:I[97367,["$2","$3"],"OutletBoundary"]
+c:"$Sreact.suspense"
+e:"ViewportBoundary"
+f:I[97367,["$2","$3"],"$e"]
+11:"MetadataBoundary"
+12:I[97367,["$2","$3"],"$11"]
+14:I[68027,["$2","$3"],"default",1]
+:HL["/listenup/_next/static/chunks/0q7n97_u1_jh2.css","style"]
+9:X
+a:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":[["$","div",null,{"className":"py-24 text-center","children":[["$","h1",null,{"className":"text-2xl font-bold","children":"Página não encontrada"}],["$","$L7",null,{"href":"/","className":"btn-ghost mt-6","children":"Voltar ao início"}]]}],null,["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]]}],"p":false,"v":null}}]]
+8:[["children",{"s":"/_not-found","h":512,"d":{"r":["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],"p":false,"v":"$9"},"c":"$Qa"}]]
+0:{"P":null,"c":["","_not-found",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/listenup/_next/static/chunks/0q7n97_u1_jh2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/listenup/_next/static/chunks/0mgel2dqlno6t.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/listenup/_next/static/chunks/1digd9mgfmuoi.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"pt-BR","className":"_0bjUvq_variable","suppressHydrationWarning":true,"children":["$","body",null,{"className":"min-h-dvh font-sans antialiased","children":["$","$L4",null,{"children":["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"py-24 text-center","children":[["$","h1",null,{"className":"text-2xl font-bold","children":"Página não encontrada"}],["$","$L7",null,{"href":"/","className":"btn-ghost mt-6","children":"Voltar ao início"}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],"p":false,"v":null},"c":"$Q8"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$Lf",null,{"children":"$L10"}],["$","$L12",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$c",null,{"name":"Next.Metadata","children":"$L13"}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":false,"v":null}},"m":"$undefined","G":["$14",[["$","link","0",{"rel":"stylesheet","href":"/listenup/_next/static/chunks/0q7n97_u1_jh2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"AbcFFJVXced14bezvosGb"}
+9:C
+10:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, viewport-fit=cover"}],["$","meta","2",{"name":"theme-color","content":"#f6f5f1","media":"(prefers-color-scheme: light)"}],["$","meta","3",{"name":"theme-color","content":"#0e1013","media":"(prefers-color-scheme: dark)"}]]
+15:I[27201,["$2","$3"],"IconMark"]
+d:null
+13:[["$","title","0",{"children":"ListenUp"}],["$","meta","1",{"name":"description","content":"Inglês avançado (C1/C2) com trilhas automáticas de vídeos reais do YouTube."}],["$","meta","2",{"name":"application-name","content":"ListenUp"}],["$","link","3",{"rel":"manifest","href":"/listenup/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","4",{"name":"robots","content":"noindex, nofollow"}],["$","meta","5",{"name":"format-detection","content":"telephone=no"}],["$","meta","6",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","7",{"name":"apple-mobile-web-app-title","content":"ListenUp"}],["$","meta","8",{"name":"apple-mobile-web-app-status-bar-style","content":"black-translucent"}],["$","link","9",{"rel":"icon","href":"/listenup/icons/favicon-32.png","sizes":"32x32","type":"image/png"}],["$","link","10",{"rel":"apple-touch-icon","href":"/listenup/icons/apple-touch-icon.png","sizes":"180x180"}],["$","$L15","11",{}]]

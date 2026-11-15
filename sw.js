@@ -1,0 +1,114 @@
+/* ListenUp — service worker
+ * - Interface (HTML/JS/CSS/ícones) fica em cache: o app abre offline.
+ * - Páginas: rede primeiro (versão nova), cache se estiver offline.
+ * - Arquivos com hash (/_next/static): cache primeiro.
+ * - Miniaturas do YouTube: cache com limite.
+ * - Dados (Supabase) NÃO passam por aqui: ficam no IndexedDB do app (src/lib/store.ts).
+ * __VERSION__ e __PRECACHE__ são preenchidos por scripts/pos-build.mjs a cada build.
+ */
+const VERSION = "d93e52c0876e"
+const PRECACHE = ["404/","__next.__PAGE__.txt","__next._full.txt","__next._tree.txt","_next/static/AbcFFJVXced14bezvosGb/_buildManifest.js","_next/static/AbcFFJVXced14bezvosGb/_clientMiddlewareManifest.js","_next/static/AbcFFJVXced14bezvosGb/_ssgManifest.js","_next/static/chunks/0cz1d0mv5g_q7.js","_next/static/chunks/0mgel2dqlno6t.js","_next/static/chunks/0q7n97_u1_jh2.css","_next/static/chunks/1d-3ziz_810o8.js","_next/static/chunks/1digd9mgfmuoi.js","_next/static/chunks/1gsy2oxml9q5h.js","_next/static/chunks/20e1hnq_84xsi.js","_next/static/chunks/23zsllawr0cx6.js","_next/static/chunks/2fq8gde9cuj7s.js","_next/static/chunks/310vm2bl3xxpt.js","_next/static/chunks/32za5wb9io_wo.js","_next/static/chunks/39_j1bdzreq0m.js","_next/static/chunks/3gtz9dt56x-ov.js","_next/static/chunks/3qfy96eoyh-ek.js","_next/static/chunks/3r1b4uusra0c2.js","_next/static/chunks/turbopack-3o4-t1p9g0-z6.js","_next/static/media/07c7676b89ed2778-s.p.2bn3s6zvc0dyp.woff2","_next/static/media/2fb76073e23fd9e4-s.3lvt2whj97whp.woff2","_next/static/media/45462fd7b7c12654-s.0k62hbripvv8p.woff2","_next/static/media/46a9e2f250689b4a-s.0-dom-5bn10r2.woff2","_next/static/media/6131cbbf5549afa2-s.2uwcyprjm3xu3.woff2","_next/static/media/76b70a1dbe058eb5-s.1y4-pdgsjb-pw.woff2","_next/static/media/ba63f6a0e436df8e-s.3-6t-g6q0vh0a.woff2","_not-found/__next._full.txt","_not-found/__next._not-found.__PAGE__.txt","_not-found/__next._not-found/__PAGE__.txt","_not-found/__next._tree.txt","_not-found/","_not-found/index.txt","conta/__next._full.txt","conta/__next._tree.txt","conta/__next.conta.__PAGE__.txt","conta/__next.conta/__PAGE__.txt","conta/","conta/index.txt","estudar/__next._full.txt","estudar/__next._tree.txt","estudar/__next.estudar.__PAGE__.txt","estudar/__next.estudar/__PAGE__.txt","estudar/","estudar/index.txt","icons/apple-touch-icon.png","icons/favicon-32.png","icons/icon-192.png","icons/icon-512.png","icons/maskable-512.png","","index.txt","manifest.webmanifest","novo/__next._full.txt","novo/__next._tree.txt","novo/__next.novo.__PAGE__.txt","novo/__next.novo/__PAGE__.txt","novo/","novo/index.txt","plano/__next._full.txt","plano/__next._tree.txt","plano/__next.plano.__PAGE__.txt","plano/__next.plano/__PAGE__.txt","plano/","plano/index.txt","vocab/__next._full.txt","vocab/__next._tree.txt","vocab/__next.vocab.__PAGE__.txt","vocab/__next.vocab/__PAGE__.txt","vocab/","vocab/index.txt"]
+const BASE = new URL(self.registration.scope).pathname // ex.: /listenup/
+const SHELL = `listenup-shell-${VERSION}`
+const RUNTIME = 'listenup-runtime-v1'
+const THUMBS = 'listenup-thumbs-v1'
+const MAX_THUMBS = 400
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches
+      .open(SHELL)
+      .then((c) => c.addAll(PRECACHE.map((p) => BASE + p)))
+      .then(() => self.skipWaiting()),
+  )
+})
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches
+      .keys()
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('listenup-shell-') && k !== SHELL).map((k) => caches.delete(k))))
+      .then(() => caches.open(RUNTIME))
+      .then((c) => c.keys().then((reqs) => Promise.all(reqs.map((r) => c.delete(r))))) // runtime antigo pode ser de outra versão
+      .then(() => self.clients.claim()),
+  )
+})
+
+self.addEventListener('fetch', (event) => {
+  const req = event.request
+  if (req.method !== 'GET') return
+  const url = new URL(req.url)
+
+  if (url.hostname === 'i.ytimg.com') {
+    event.respondWith(thumb(req))
+    return
+  }
+  if (url.origin !== self.location.origin || !url.pathname.startsWith(BASE)) return
+
+  if (req.mode === 'navigate') {
+    event.respondWith(page(req))
+    return
+  }
+  if (url.pathname.startsWith(BASE + '_next/static/')) {
+    event.respondWith(cacheFirst(req))
+    return
+  }
+  event.respondWith(staleWhileRevalidate(req))
+})
+
+async function page(req) {
+  try {
+    const res = await withTimeout(fetch(req), 4000)
+    if (res.ok) (await caches.open(RUNTIME)).put(req, res.clone())
+    return res
+  } catch {
+    // /plano/?id=x usa o mesmo HTML de /plano/
+    return (
+      (await caches.match(req, { ignoreSearch: true })) ||
+      (await caches.match(BASE, { ignoreSearch: true })) ||
+      new Response('Offline', { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } })
+    )
+  }
+}
+
+async function cacheFirst(req) {
+  const hit = await caches.match(req)
+  if (hit) return hit
+  const res = await fetch(req)
+  if (res.ok) (await caches.open(RUNTIME)).put(req, res.clone())
+  return res
+}
+
+async function staleWhileRevalidate(req) {
+  const hit = await caches.match(req, { ignoreSearch: true })
+  const net = fetch(req)
+    .then(async (res) => {
+      if (res.ok) (await caches.open(RUNTIME)).put(req, res.clone())
+      return res
+    })
+    .catch(() => null)
+  return hit || (await net) || new Response('', { status: 504 })
+}
+
+async function thumb(req) {
+  const cache = await caches.open(THUMBS)
+  const hit = await cache.match(req)
+  if (hit) return hit
+  try {
+    const res = await fetch(req, { mode: 'no-cors' })
+    await cache.put(req, res.clone())
+    const keys = await cache.keys()
+    if (keys.length > MAX_THUMBS) await Promise.all(keys.slice(0, keys.length - MAX_THUMBS).map((k) => cache.delete(k)))
+    return res
+  } catch {
+    return new Response('', { status: 504 })
+  }
+}
+
+function withTimeout(promise, ms) {
+  return Promise.race([promise, new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), ms))])
+}
+
+self.addEventListener('message', (event) => {
+  if (event.data === 'skipWaiting') self.skipWaiting()
+})
