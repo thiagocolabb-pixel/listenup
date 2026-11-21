@@ -1,5 +1,5 @@
-:HL["/listenup/_next/static/chunks/3w_y082yt5vjh.css","style"]
+:HL["/listenup/_next/static/chunks/40j0tbkfusfdh.css","style"]
 :HL["/listenup/_next/static/media/07c7676b89ed2778-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"certificado","h":96,"c":"$Q2"}]]
-0:{"b":"e5SQFhvusqFVzfrqwW_Wi","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"z6YhQM1qEnTHz9M9_8CVR","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
